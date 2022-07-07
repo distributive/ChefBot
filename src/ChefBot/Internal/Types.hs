@@ -11,13 +11,13 @@
 -- allow homogeneous storage throughout the rest of the implementation.
 module ChefBot.Internal.Types where
 
+import ChefBot.Utility.Types
 import Control.Concurrent.MVar (MVar)
 import Control.Monad.Reader (ReaderT)
 import Data.Text (Text)
 import Database.Persist.Sqlite (Migration, SqlPersistT)
 import Discord
 import Discord.Types
-import ChefBot.Utility.Types
 
 type CompiledDatabaseDiscord = ReaderT (MVar ChefBotCache) (SqlPersistT DiscordHandler)
 

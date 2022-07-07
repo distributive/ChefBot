@@ -9,10 +9,6 @@
 -- This module creates functions and data structures to help generate help text for commands
 module ChefBot.Utility.Help where
 
-import Data.Functor (($>))
-import Data.Text (Text)
-import qualified Data.Text as T
-import Discord.Types
 import ChefBot.Internal.Permission (getSenderPermission, userHasPermission)
 import ChefBot.Internal.Plugins (changeAction)
 import ChefBot.Internal.Types
@@ -21,6 +17,10 @@ import ChefBot.Utility.Embed (addColour)
 import ChefBot.Utility.Parser (skipSpace)
 import ChefBot.Utility.Permission (requirePermission)
 import ChefBot.Utility.Types hiding (helpPages)
+import Data.Functor (($>))
+import Data.Text (Text)
+import qualified Data.Text as T
+import Discord.Types
 import Text.Megaparsec (choice, chunk, eof, try, (<?>), (<|>))
 import Text.RawString.QQ (r)
 

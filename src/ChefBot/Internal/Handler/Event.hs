@@ -16,8 +16,8 @@ module ChefBot.Internal.Handler.Event
   )
 where
 
-import Discord.Types (ChannelId, Event, MessageId, ReactionInfo)
 import ChefBot.Internal.Types
+import Discord.Types (ChannelId, Event, MessageId, ReactionInfo)
 
 -- | This runs each 'MessageChange' feature in @cs@ with the information from a
 -- Discord 'MessageUpdate' or 'MessageDelete' event - whether it is an update

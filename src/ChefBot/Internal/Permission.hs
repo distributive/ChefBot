@@ -9,11 +9,11 @@
 -- This contains some functions to extract and handle privileged commands
 module ChefBot.Internal.Permission where
 
-import Control.Monad.IO.Class (liftIO)
-import Discord.Types (GuildMember, Message, RoleId, memberRoles)
 import ChefBot.Utility.Discord (getMessageMember)
 import ChefBot.Utility.Types
 import ChefBot.Utility.Utils (isDebug)
+import Control.Monad.IO.Class (liftIO)
+import Discord.Types (GuildMember, Message, RoleId, memberRoles)
 import System.Environment (lookupEnv)
 import Text.Read (readMaybe)
 

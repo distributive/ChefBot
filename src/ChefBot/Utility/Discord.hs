@@ -40,6 +40,10 @@ module ChefBot.Utility.Discord
   )
 where
 
+import ChefBot.Internal.Cache
+import ChefBot.Internal.Embed
+import ChefBot.Utility (EnvDatabaseDiscord, liftDiscord)
+import ChefBot.Utility.Exception (BotException (..))
 import Control.Monad.Cont (liftIO)
 import Control.Monad.Exception (MonadException (throw))
 import Data.Char (isDigit)
@@ -55,10 +59,6 @@ import Discord.Internal.Gateway.Cache
 import qualified Discord.Requests as R
 import Discord.Types
 import GHC.Word (Word64)
-import ChefBot.Internal.Cache
-import ChefBot.Internal.Embed
-import ChefBot.Utility (EnvDatabaseDiscord, liftDiscord)
-import ChefBot.Utility.Exception (BotException (..))
 import System.Environment (lookupEnv)
 
 -- | @sendMessage@ sends the input message @t@ in the same channel as message

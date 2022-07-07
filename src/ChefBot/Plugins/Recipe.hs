@@ -9,19 +9,19 @@
 -- A command that loads recipes.
 module ChefBot.Plugins.Recipe (recipePlugin) where
 
-import Control.Monad.Reader (ask, liftIO)
-import Data.Aeson (FromJSON)
-import Data.Yaml (decodeFileEither)
-import Data.Yaml.Internal (ParseException)
-import Data.Text (Text, intercalate, unpack)
 import ChefBot.Utility
 import ChefBot.Utility.Discord (sendEmbedMessage)
-import ChefBot.Utility.Embed (basicEmbed, addFooter)
-import ChefBot.Utility.SmartParser (PComm (parseComm), RestOfInput (ROI))
+import ChefBot.Utility.Embed (addFooter, basicEmbed)
 import ChefBot.Utility.Search (closestValue)
-import Text.RawString.QQ
-import GHC.Generics (Generic)
+import ChefBot.Utility.SmartParser (PComm (parseComm), RestOfInput (ROI))
+import Control.Monad.Reader (ask, liftIO)
+import Data.Aeson (FromJSON)
+import Data.Text (Text, intercalate, unpack)
+import Data.Yaml (decodeFileEither)
+import Data.Yaml.Internal (ParseException)
 import Discord.Internal.Types
+import GHC.Generics (Generic)
+import Text.RawString.QQ
 
 -- | @recipe@.
 recipe :: EnvCommand CookBook
@@ -45,7 +45,7 @@ recipe = Command "recipe" (parseComm recipeComm) []
           meth = "**Method**\n" <> method res
           body = ings <> meth
           footer = "Recipe provided by " <> citation res
-      in addFooter footer $ basicEmbed header body
+       in addFooter footer $ basicEmbed header body
 
 recipeHelp :: HelpPage
 recipeHelp =
@@ -69,6 +69,7 @@ data Recipe = Recipe
     citation :: Text
   }
   deriving (Eq, Show, Generic)
+
 instance FromJSON Recipe
 
 -- | @CookBook@ is the type representing all recipes.
@@ -76,6 +77,7 @@ data CookBook = CookBook
   { recipes :: [Recipe]
   }
   deriving (Eq, Show, Generic)
+
 instance FromJSON CookBook
 
 defaultCookBook :: CookBook

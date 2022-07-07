@@ -9,10 +9,10 @@
 -- This contains a simple interface for plugin authors to require a specific level of privilege.
 module ChefBot.Utility.Permission where
 
-import Discord.Internal.Rest (Message)
 import ChefBot.Internal.Permission
 import ChefBot.Utility.Discord (sendMessage)
 import ChefBot.Utility.Types
+import Discord.Internal.Rest (Message)
 
 -- | @requirePermission@ only runs the inputted effect if permissions are matched. Otherwise it returns an error.
 requirePermission :: RequiredPermission -> Message -> EnvDatabaseDiscord s () -> EnvDatabaseDiscord s ()

@@ -9,8 +9,6 @@
 -- This is an example plugin which responds to certain calls with specific responses.
 module ChefBot.Plugins.Basic (basicPlugin) where
 
-import Data.Text as T (Text, toTitle)
-import Discord.Internal.Rest (Message)
 import ChefBot.Utility.Discord (sendMessage)
 import ChefBot.Utility.SmartParser (parseComm)
 import ChefBot.Utility.Types
@@ -26,6 +24,8 @@ import ChefBot.Utility.Types
     helpPages,
     plug,
   )
+import Data.Text as T (Text, toTitle)
+import Discord.Internal.Rest (Message)
 import Text.Megaparsec (anySingle, skipManyTill)
 import Text.Megaparsec.Char (string')
 

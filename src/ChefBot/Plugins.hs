@@ -14,13 +14,13 @@ module ChefBot.Plugins
   )
 where
 
-import Control.Concurrent.MVar (MVar)
 import ChefBot.Internal.Administration (ShutdownReason)
 import ChefBot.Internal.Plugins (compilePlugin)
 import ChefBot.Internal.Types (CompiledPlugin)
 import ChefBot.Plugins.Administration (administrationPlugin)
 import ChefBot.Plugins.Basic (basicPlugin)
 import ChefBot.Plugins.Recipe (recipePlugin)
+import Control.Concurrent.MVar (MVar)
 
 -- Use long list format to make additions and removals non-conflicting on git PRs
 plugins :: MVar ShutdownReason -> [CompiledPlugin]

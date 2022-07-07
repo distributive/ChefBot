@@ -16,16 +16,6 @@ module ChefBot.Handler
   )
 where
 
-import Control.Concurrent (MVar)
-import Control.Monad (unless)
-import Control.Monad.Exception
-import Control.Monad.IO.Class (MonadIO (liftIO))
-import Control.Monad.Reader (ReaderT, ask, lift, runReaderT)
-import Data.Pool (Pool)
-import Data.Text (Text)
-import Database.Persist.Sqlite (SqlBackend, runSqlPool)
-import Discord (DiscordHandler)
-import Discord.Types
 import ChefBot.Internal.Handler.Command
   ( parseNewMessage,
   )
@@ -40,6 +30,16 @@ import ChefBot.Internal.Types
 import ChefBot.Utility.Discord (sendEmbedMessage)
 import ChefBot.Utility.Exception
 import ChefBot.Utility.Types (ChefBotCache)
+import Control.Concurrent (MVar)
+import Control.Monad (unless)
+import Control.Monad.Exception
+import Control.Monad.IO.Class (MonadIO (liftIO))
+import Control.Monad.Reader (ReaderT, ask, lift, runReaderT)
+import Data.Pool (Pool)
+import Data.Text (Text)
+import Database.Persist.Sqlite (SqlBackend, runSqlPool)
+import Discord (DiscordHandler)
+import Discord.Types
 import UnliftIO.Concurrent
   ( ThreadId,
     forkIO,

@@ -9,10 +9,10 @@
 -- This module exposes some helpful functions for working with full Embeds
 module ChefBot.Utility.Embed where
 
-import Data.Text (Text)
-import Discord.Internal.Types
 import ChefBot.Internal.Embed (Embeddable, asEmbed, colourToInternal)
 import ChefBot.Utility.Types (DiscordColour)
+import Data.Text (Text)
+import Discord.Internal.Types
 
 -- | Some helper functions to allow progressively building up an embed
 -- If you need something more complex, you can still use the createEmbed flow provided by discord-haskell,

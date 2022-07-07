@@ -14,13 +14,13 @@ module ChefBot.Internal.Administration
   )
 where
 
+import ChefBot.Internal.Types
 import Control.Monad.Cont (void, when)
 import Data.List.Extra (isInfixOf, lower, trim)
 import Data.Text (Text, pack)
 import Database.Persist
 import Database.Persist.Sqlite (SqlPersistM)
 import Database.Persist.TH
-import ChefBot.Internal.Types
 import System.Environment (lookupEnv)
 import System.Process
 

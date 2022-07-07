@@ -20,11 +20,11 @@ module ChefBot.Utility.Random
   )
 where
 
+import ChefBot.Utility.Exception (BotException (RandomException), catchBot)
 import Control.Monad (foldM)
 import Control.Monad.Exception (MonadException (throw))
 import Data.List (find)
 import Data.Maybe (fromJust)
-import ChefBot.Utility.Exception (BotException (RandomException), catchBot)
 import System.Random (mkStdGen, randomR, randomRIO)
 
 -- | @randomRange@ gets a random number between lower (inclusive) and upper

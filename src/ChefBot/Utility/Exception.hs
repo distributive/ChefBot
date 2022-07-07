@@ -19,12 +19,12 @@ module ChefBot.Utility.Exception
   )
 where
 
+import ChefBot.Utility.Embed
+import ChefBot.Utility.Types (DiscordColour (..))
 import Control.Monad.Exception (Exception, MonadException, catch, throw)
 import Data.List (intercalate)
 import Data.Text (pack)
 import Discord.Internal.Types
-import ChefBot.Utility.Embed
-import ChefBot.Utility.Types (DiscordColour (..))
 
 -- | @BotException@ is the type for errors caught in ChefBot.
 -- Declare new errors here, and define them at the bottom of the file.

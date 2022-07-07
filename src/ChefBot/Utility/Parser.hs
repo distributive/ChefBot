@@ -10,13 +10,13 @@
 -- reexports from "Text.Parsec" to avoid having to import it.
 module ChefBot.Utility.Parser where
 
+import ChefBot.Utility
+import ChefBot.Utility.Discord (reactToMessage)
 import Data.Char (isDigit, isLetter, isSpace)
 import Data.Functor (void, ($>))
 import Data.Text (Text)
 import qualified Data.Text as T
 import Discord.Internal.Rest (Message)
-import ChefBot.Utility
-import ChefBot.Utility.Discord (reactToMessage)
 import Text.Megaparsec
 import Text.Megaparsec.Char (char, string)
 

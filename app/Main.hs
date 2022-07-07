@@ -1,5 +1,9 @@
 module Main where
 
+import ChefBot (runChefBot)
+import ChefBot.Internal.Administration
+import ChefBot.Plugins (plugins)
+import ChefBot.Utility.Types
 import Control.Concurrent.MVar (MVar, newMVar, swapMVar)
 import Control.Monad (forever, unless)
 import Control.Monad.Extra
@@ -8,10 +12,6 @@ import Data.Text (pack)
 import Data.Text.Encoding (encodeUtf8)
 import LoadEnv (loadEnv)
 import Paths_chefbot (version)
-import ChefBot (runChefBot)
-import ChefBot.Internal.Administration
-import ChefBot.Plugins (plugins)
-import ChefBot.Utility.Types
 import System.Environment (getEnv, lookupEnv)
 import System.Exit (die)
 import Text.Regex.PCRE

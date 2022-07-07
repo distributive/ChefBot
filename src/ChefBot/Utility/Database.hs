@@ -15,11 +15,11 @@ module ChefBot.Utility.Database
   )
 where
 
+import ChefBot.Utility (EnvDatabaseDiscord, liftSql)
 import Data.Int (Int64)
 import Data.Map (Map)
 import Data.Text (Text)
 import qualified Database.Persist.Sqlite as Sql
-import ChefBot.Utility (EnvDatabaseDiscord, liftSql)
 
 insert :: (Sql.PersistEntity record, Sql.PersistEntityBackend record ~ Sql.SqlBackend) => record -> EnvDatabaseDiscord d (Sql.Key record)
 insert r = liftSql $ Sql.insert r

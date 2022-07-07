@@ -11,6 +11,14 @@ module ChefBot.Plugins.Administration (administrationPlugin) where
 
 -- import from internal is unorthodox, but I don't want other plugins messing with that table...
 
+import ChefBot.Internal.Administration
+import ChefBot.Internal.Cache (getVersionInfo)
+import ChefBot.Internal.Types (CompiledPlugin (compiledName))
+import ChefBot.Utility
+import ChefBot.Utility.Database
+import ChefBot.Utility.Discord (sendMessage)
+import ChefBot.Utility.Permission (requirePermission)
+import ChefBot.Utility.SmartParser
 import Control.Concurrent.MVar (MVar, swapMVar)
 import Control.Monad (when)
 import Control.Monad.Cont (liftIO)
@@ -22,14 +30,6 @@ import Database.Persist (Entity, Filter, entityVal, (==.))
 import Discord (stopDiscord)
 import Discord.Types
 import Language.Haskell.Printf (s)
-import ChefBot.Internal.Administration
-import ChefBot.Internal.Cache (getVersionInfo)
-import ChefBot.Internal.Types (CompiledPlugin (compiledName))
-import ChefBot.Utility
-import ChefBot.Utility.Database
-import ChefBot.Utility.Discord (sendMessage)
-import ChefBot.Utility.Permission (requirePermission)
-import ChefBot.Utility.SmartParser
 import Text.RawString.QQ
 
 -- | @SS@ denotes the type returned by the command setup. Here its unused.

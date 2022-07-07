@@ -14,13 +14,13 @@
 -- build a parser that reads in that Int and then runs the command.
 module ChefBot.Utility.SmartParser where
 
+import ChefBot.Utility.Parser
+import ChefBot.Utility.Types (EnvDatabaseDiscord, Parser)
 import Data.Proxy
 import Data.String (IsString (fromString))
 import Data.Text (Text, pack)
 import Discord.Types (Message)
 import GHC.TypeLits
-import ChefBot.Utility.Parser
-import ChefBot.Utility.Types (EnvDatabaseDiscord, Parser)
 import Text.Megaparsec
 
 -- | Custom infix operator to replace the error of a failing parser (regardless

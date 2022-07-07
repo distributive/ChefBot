@@ -16,18 +16,18 @@ module ChefBot.Internal.Handler.Command
   )
 where
 
-import qualified Data.List.NonEmpty as NE
-import Data.Maybe (catMaybes)
-import Data.Set (singleton, toList)
-import Data.Text (Text)
-import Data.Void (Void)
-import Discord.Types (Message (messageText))
 import ChefBot.Internal.Plugins (changeAction)
 import ChefBot.Internal.Types
 import ChefBot.Utility.Discord (sendEmbedMessage)
 import ChefBot.Utility.Exception (BotException (ParserException), embedError)
 import ChefBot.Utility.Parser (skipSpace1, space, word)
 import ChefBot.Utility.Types (Parser)
+import qualified Data.List.NonEmpty as NE
+import Data.Maybe (catMaybes)
+import Data.Set (singleton, toList)
+import Data.Text (Text)
+import Data.Void (Void)
+import Discord.Types (Message (messageText))
 import Text.Megaparsec
 import qualified UnliftIO.Exception as UIOE (tryAny)
 

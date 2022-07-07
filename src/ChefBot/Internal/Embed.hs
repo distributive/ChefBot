@@ -9,6 +9,7 @@
 -- This module contains some behind the scenes logic to allow creation of coloured embeds
 module ChefBot.Internal.Embed where
 
+import ChefBot.Utility.Types
 import Data.Aeson
 import qualified Data.ByteString.Lazy as BL
 import Data.Text (Text)
@@ -17,7 +18,6 @@ import Discord.Internal.Types
 import Network.HTTP.Client.MultipartFormData (partBS)
 import Network.HTTP.Req ((/:))
 import qualified Network.HTTP.Req as R
-import ChefBot.Utility.Types
 
 colourToInternal :: DiscordColour -> Integer
 colourToInternal (RGB r g b) = ((r * 256) + g) * 256 + b

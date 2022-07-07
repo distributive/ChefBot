@@ -16,6 +16,12 @@ module ChefBot
   )
 where
 
+import ChefBot.Handler (eventHandler, killCron, runCron)
+import ChefBot.Internal.Administration (adminMigration, currentBlacklist, removeBlacklisted)
+import ChefBot.Internal.Plugins
+import ChefBot.Internal.Types
+import ChefBot.Utility
+import ChefBot.Utility.Help
 import Control.Concurrent
   ( MVar,
     ThreadId,
@@ -38,12 +44,6 @@ import Database.Persist.Sqlite
   )
 import Discord
 import Discord.Internal.Rest
-import ChefBot.Handler (eventHandler, killCron, runCron)
-import ChefBot.Internal.Administration (adminMigration, currentBlacklist, removeBlacklisted)
-import ChefBot.Internal.Plugins
-import ChefBot.Internal.Types
-import ChefBot.Utility
-import ChefBot.Utility.Help
 
 -- | runChefBot @dToken@ @prefix@ @dbpath@ @plugins@ runs the bot using the
 -- given Discord API token @dToken@ and SQLite connection string @dbpath@. Only

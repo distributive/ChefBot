@@ -10,13 +10,13 @@
 -- Not intended for use by plugins directly, if you need to do that create a separate cache in your setup phase.
 module ChefBot.Internal.Cache where
 
+import ChefBot.Utility.Types
 import Control.Concurrent.MVar (putMVar, readMVar, takeMVar)
 import Control.Monad.IO.Class (liftIO)
 import Control.Monad.Trans.Reader (ask)
 import qualified Data.Map as M
 import Data.Text (Text)
 import Discord.Types
-import ChefBot.Utility.Types
 
 lookupEmojiCache :: Text -> EnvDatabaseDiscord s (Maybe Emoji)
 lookupEmojiCache t = do

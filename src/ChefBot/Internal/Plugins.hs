@@ -9,11 +9,11 @@
 -- This contains some functions to combine and compile plugins
 module ChefBot.Internal.Plugins where
 
-import Control.Monad.Trans.Reader (runReaderT)
-import Discord.Types (Message)
 import ChefBot.Internal.Types hiding (helpPages, migrations)
 import qualified ChefBot.Internal.Types as HT
 import ChefBot.Utility.Types
+import Control.Monad.Trans.Reader (runReaderT)
+import Discord.Types (Message)
 
 -- | Combines a list of plugins into a single plugin with the combined
 -- functionality. The bot actually runs a single plugin, which is just the
