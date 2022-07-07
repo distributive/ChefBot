@@ -1,5 +1,5 @@
 # ChefBot
 
-A half-baked Discord bot for displaying recipes built from the source code of [Sahasrara](https://github.com/distributive/Sahasrara) written on top of [WarwickTabletop's Tablebot](https://github.com/WarwickTabletop/tablebot) (built on top of [discord-haskell](https://github.com/aquarial/discord-haskell)) and inspired by [Jeeves](https://github.com/Mezuzi/Jeeves) and [Beanstalk](https://github.com/dougblack/beanstalk). Note that a lot of commands were stripped from the original version of this bot, but the underlying code remains. If you find code that seems to be unused, it probably is.
+A half-baked Discord bot for displaying recipes built from the source code of [Sahasrara](https://github.com/distributive/Sahasrara) written on top of [WarwickTabletop's Tablebot](https://github.com/WarwickTabletop/tablebot) (built on top of [discord-haskell](https://github.com/aquarial/discord-haskell)).
 
 I made this as a joke in a single day and have no intention of maintaining it. If you're interested in taking over development please feel free to fork this repository or make your own copy from scratch in whichever language/framework of your choosing. Since ChefBot is based on a much larger and more intricate bot this is possibly the most over-engineered things I've ever made, so I would advise just starting again.
