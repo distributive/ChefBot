@@ -1,0 +1,19 @@
+recipes:
+  - title: Example Recipe
+    ingredients:
+      - Beans 100Kg
+      - Memes 10L
+    method: Let your memes be beans
+    citation: Ams
+  - title: Another Recipe
+    ingredients: []
+    method: ""
+    citation: Bams
+  - title: Steak and Ale Pie
+    ingredients:
+      - Steak
+      - Ale
+      - Pie
+    method: "Put steak and ale in the pie.\n
+Make hot."
+    citation: Tami "The Pie" Jo
